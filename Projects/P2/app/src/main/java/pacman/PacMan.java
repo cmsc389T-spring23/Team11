@@ -20,7 +20,17 @@ public class PacMan {
   }
 
   public boolean move() {
-    return false;
+    ArrayList<Location> locs = this.get_valid_moves();
+    if(locs.size() <= 0) {
+      return(false);
+    }
+    result = myMap.move("pacman", locs.get(0), Map.Type.PACMAN);
+    if(result) {
+      this.myLoc = locs.get(0);
+      return(true);
+    } else {
+      return(false);
+    }
   }
 
   public boolean is_ghost_in_range() {
