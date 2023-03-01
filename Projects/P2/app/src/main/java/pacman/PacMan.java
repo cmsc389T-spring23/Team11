@@ -24,14 +24,13 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
-    //return false;
     int xloc= myLoc.x;
     int yloc= myLoc.y;
-    if( myMap.getLoc(newLocation(xloc-1, yloc)).contains(Map.Type.GHOST) ||
-      myMap.getLoc(newLocation(xloc+1, yloc)).contains(Map.Type.GHOST) ||
-      myMap.getLoc(newLocation(xloc, yloc-1)).contains(Map.Type.GHOST) ||
-      myMap.getLoc(newLocation(xloc, yloc+1)).contains(Map.Type.GHOST)) {
-        return true
+    if(myMap.getLoc(new Location(xloc-1, yloc)).contains(Map.Type.GHOST) ||
+      myMap.getLoc(new Location(xloc+1, yloc)).contains(Map.Type.GHOST) ||
+      myMap.getLoc(new Location(xloc, yloc-1)).contains(Map.Type.GHOST) ||
+      myMap.getLoc(new Location(xloc, yloc+1)).contains(Map.Type.GHOST)) {
+        return true;
     } else {
     return false;
     }
