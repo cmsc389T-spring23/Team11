@@ -59,7 +59,7 @@ public class Map {
   }
 
   public HashSet<Type> getLoc(Location loc) {
-    HashSet<Type> result = this.field.get(loc);
+    HashSet<Type> result = this.field.get(loc); 
     return(result);
   }
 
