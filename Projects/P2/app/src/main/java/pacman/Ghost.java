@@ -36,7 +36,15 @@ public class Ghost {
   }
 
   public boolean move() {
-    return false;
+    ArrayList<Location> locs = this.get_valid_moves();
+    if(locs.size() <= 0) {
+      return(false);
+    }
+    if(this.myMap.move(this.myName, locs.get(0), Map.Type.GHOST)) {
+      return(true);
+    } else {
+      return(false);
+    }
   }
 
   public boolean is_pacman_in_range() {
