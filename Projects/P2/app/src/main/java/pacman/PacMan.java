@@ -43,7 +43,16 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
+    int xloc= myLoc.x;
+    int yloc= myLoc.y;
+    if(myMap.getLoc(new Location(xloc-1, yloc)).contains(Map.Type.GHOST) ||
+      myMap.getLoc(new Location(xloc+1, yloc)).contains(Map.Type.GHOST) ||
+      myMap.getLoc(new Location(xloc, yloc-1)).contains(Map.Type.GHOST) ||
+      myMap.getLoc(new Location(xloc, yloc+1)).contains(Map.Type.GHOST)) {
+        return true;
+    } else {
     return false;
+    }
   }
 
   public JComponent consume() {
