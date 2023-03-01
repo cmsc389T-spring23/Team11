@@ -1,7 +1,9 @@
 package pacman;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
+import javax.tools.DocumentationTool.Location;
 
 public class Map {
 
@@ -40,7 +42,8 @@ public class Map {
   public void add(String name, Location loc, JComponent comp, Type type) {
     locations.put(name, loc);
     components.put(name, comp);
-    if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
+    if (!field.containsKey(loc))
+      field.put(loc, new HashSet<Type>());
     field.get(loc).add(type);
   }
 
@@ -55,7 +58,22 @@ public class Map {
   public boolean move(String name, Location loc, Type type) {
     // update locations, components, and field
     // use the setLocation method for the component to move it to the new location
-    return false;
+    if (!locations.containsKey(name) || !components.containsKey(name)) {
+      return false;
+    }
+
+    // if type doesn't exist in current loc of name
+    if (!field.get(locations.get(name)).contains(type)) {
+      return false;
+    }
+
+    locations.put(name, loc);
+    components.get(name).setLocation(loc.x, loc.y);
+    field.get(locations.get(name)).remove(type); // removes type in original loc
+    field.get(loc).add(type); // add type in new loc
+
+    return true;
+
   }
 
   public HashSet<Type> getLoc(Location loc) {
