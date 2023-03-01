@@ -24,10 +24,10 @@ public class Ghost {
   public boolean is_pacman_in_range() {
     int xloc = myLoc.x;
     int yloc = myLoc.y;
-    if( myMap.getLoc(newLocation(xloc-1, yloc)).contains(Map.Type.PACMAN) ||
-      myMap.getLoc(newLocation(xloc+1, yloc)).contains(Map.Type.PACMAN) ||
-      myMap.getLoc(newLocation(xloc, yloc-1)).contains(Map.Type.PACMAN) ||
-      myMap.getLoc(newLocation(xloc, yloc+1)).contains(Map.Type.PACMAN)) {
+    if(myMap.getLoc(new Location(xloc-1, yloc)).contains(Map.Type.PACMAN) ||
+      myMap.getLoc(new Location(xloc+1, yloc)).contains(Map.Type.PACMAN) ||
+      myMap.getLoc(new Location(xloc, yloc-1)).contains(Map.Type.PACMAN) ||
+      myMap.getLoc(new Location(xloc, yloc+1)).contains(Map.Type.PACMAN)) {
           return true;
     } else {
     return false;
