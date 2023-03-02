@@ -34,7 +34,6 @@ Create an empty map
 Put Pacman at 3,4
 If Pacman can move then pass test
 
-
 # GHOST CLASS
 
 # Ghost - move()
@@ -56,4 +55,5 @@ The test will do the following:
 Create an empty map
 Put a ghost at 5,5.
 Iterate through contents of getLoc to check if there is a Ghost.
-Assert true if there is a ghost, assert false if there is no ghost.
+Assert true if there is a ghost, assert false if there is no ghost
+
