@@ -37,6 +37,7 @@ Create an empty map
 Put Pacman at 3,4
 If Pacman can move then pass test
 
+
 # Pacman - is ghost in range
 ## Written by Gayathri Krishnan
 This function checks if there is a ghost within a radius if 1 from Pacman. It uses the getLoc method from the map class to determine that.
@@ -46,6 +47,7 @@ If Pacman is at (1,2) and a ghost is at (3,4), the ghost cannot attack pacman.
 
 # Pacman - consume
 Function is given.
+
 
 
 # GHOST CLASS
@@ -88,6 +90,7 @@ The test will do the following:
 Create an empty map
 Put a ghost at 5,5.
 Iterate through contents of getLoc to check if there is a Ghost.
+
 Assert true if there is a ghost, assert false if there is no ghost.
 
 # Map - attack
@@ -99,3 +102,7 @@ When you call map.attack("clyde"), it returns true as they both are in a radius 
 
 # Map - eatCookie
 Given
+=======
+Assert true if there is a ghost, assert false if there is no ghost
+
+
