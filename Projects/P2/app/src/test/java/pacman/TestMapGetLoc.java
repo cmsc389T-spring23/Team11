@@ -1,4 +1,5 @@
 package pacman;
+
 import java.io.*;
 import junit.framework.*;
 import java.awt.Color;
@@ -6,16 +7,17 @@ import java.awt.Color;
 public class TestMapGetLoc extends TestCase {
 
   public void testMapGetLoc() throws FileNotFoundException {
-    Mainframe frame = new MainFrame(); //Creates A New Map With Walls and Tokens Initialized
-    x = 5;
-    y = 5;
-    Ghost ghost = frame.addGhost(new Location(x, y), "name", Color.red); //Creates a red ghost named "name" at location x,y
-    Type result = null;
-    for Type t : frame.getMap.getLoc(x, y) {
-      if(t == Type.GHOST) {
+    MainFrame frame = new MainFrame(); // Creates A New Map With Walls and Tokens Initialized
+    int x = 5;
+    int y = 5;
+    Ghost ghost = frame.addGhost(new Location(x, y), "name", Color.red); // Creates a red ghost named "name" at location
+                                                                         // x,y
+    Map.Type result = null;
+    for (Map.Type t : frame.getMap().getLoc(new Location(x, y))) {
+      if (t == Map.Type.GHOST) {
         result = t;
       }
     }
-    assertEquals(Type.GHOST, result);
+    assertEquals(Map.Type.GHOST, result);
   }
 }

@@ -3,7 +3,6 @@ package pacman;
 import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
-import javax.tools.DocumentationTool.Location;
 
 public class Map {
 
@@ -77,16 +76,16 @@ public class Map {
   }
 
   public HashSet<Type> getLoc(Location loc) {
-    HashSet<Type> result = this.field.get(loc); 
-    return(result);
+    HashSet<Type> result = this.field.get(loc);
+    return (result);
   }
 
   public boolean attack(String Name) {
-    if(!locations.containsKey(Name)) {
+    if (!locations.containsKey(Name)) {
       return false;
     }
-    if(!locations.containsKey("pacman")) {
-      gameOver= true;
+    if (!locations.containsKey("pacman")) {
+      gameOver = true;
     }
     return gameOver;
   }
