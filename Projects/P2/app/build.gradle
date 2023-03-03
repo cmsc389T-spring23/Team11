@@ -33,4 +33,7 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
+
+    jvmArgs '-Xmx2g'
 }
+

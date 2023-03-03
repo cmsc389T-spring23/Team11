@@ -53,16 +53,28 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
-    int xloc = myLoc.x;
-    int yloc = myLoc.y;
-    if (myMap.getLoc(new Location(xloc - 1, yloc)).contains(Map.Type.GHOST) ||
-        myMap.getLoc(new Location(xloc + 1, yloc)).contains(Map.Type.GHOST) ||
-        myMap.getLoc(new Location(xloc, yloc - 1)).contains(Map.Type.GHOST) ||
-        myMap.getLoc(new Location(xloc, yloc + 1)).contains(Map.Type.GHOST)) {
-      return true;
-    } else {
-      return false;
+    ArrayList<Location> locAttack = new ArrayList<>();
+    locAttack.add(new Location(this.myLoc.x, this.myLoc.y));
+
+    locAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y));
+    locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y));
+
+    locAttack.add(new Location(this.myLoc.x, this.myLoc.y + 1));
+    locAttack.add(new Location(this.myLoc.x, this.myLoc.y - 1));
+
+    locAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y + 1));
+    locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y - 1));
+    
+
+    locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y + 1));
+    locAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y - 1));
+
+    for(Location loc : locAttack){
+      if(this.myMap.getLoc(loc) != null && this.myMap.getLoc(loc).contains(Map.Type.GHOST)){
+        return true;
+      }
     }
+    return false;
   }
 
   public JComponent consume() {

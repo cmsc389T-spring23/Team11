@@ -81,13 +81,15 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    if (!locations.containsKey(Name)) {
-      return false;
-    }
-    if (!locations.containsKey("pacman")) {
-      gameOver = true;
-    }
-    return gameOver;
+    // if (!locations.containsKey(Name)) {
+    //   return false;
+    // }
+    // if (!locations.containsKey("pacman")) {
+    //   gameOver = true;
+    // }
+    // return gameOver;
+    gameOver = true;
+    return true;
   }
 
   public JComponent eatCookie(String name) {
