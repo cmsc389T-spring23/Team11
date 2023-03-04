@@ -36,13 +36,30 @@ public class Ghost {
   }
 
   public boolean move() {
-    return false;
+    ArrayList<Location> locs = this.get_valid_moves();
+    if(locs.size() <= 0) {
+      return(false);
+    }
+    if(this.myMap.move(this.myName, locs.get(0), Map.Type.GHOST)) {
+      return(true);
+    } else {
+      return(false);
+    }
   }
 
   public boolean is_pacman_in_range() {
-    return false;
+    int xloc = myLoc.x;
+    int yloc = myLoc.y;
+    if( myMap.getLoc(new Location(xloc-1, yloc)).contains(Map.Type.PACMAN) ||
+        myMap.getLoc(new Location(xloc+1, yloc)).contains(Map.Type.PACMAN) ||
+        myMap.getLoc(new Location(xloc, yloc-1)).contains(Map.Type.PACMAN) ||
+        myMap.getLoc(new Location(xloc, yloc+1)).contains(Map.Type.PACMAN)) {
+          return true;
+    } else {
+      return false;
+    }
   }
-
+    
   public boolean attack() {
     return is_pacman_in_range() && myMap.attack(myName);
   }
