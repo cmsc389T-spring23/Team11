@@ -10,23 +10,18 @@ Venkat Kuppoor
 
 
 
-# A section on how to run the code from the command line
+Once this part has been completed, you should be able to see a JFrame appear that allows you to play Automonous PacMan by compiling and running your files. If you don't have Gradle installed, follow the instructions [here](https://gradle.org/install/). We will be using Gradle to build and run the project:
 
-
-
-# Code block for command to compile and run the game
-
-
-
-# A list of the functions you wrote with: a description of the implementation for each function a description of the test you wrote
-
-
+```bash
+gradle build
+gradle run
 
 
 # PACMAN CLASS
-# Pacman - get valid moves
-
-
+# Pacman - get_valid_moves()
+## Written by Venkat Kuppoor
+This method returns a list of valid locations where a player can move in a game. It checks if the adjacent locations to the player's current location contain a wall, and if they don't, it adds the location to the list of valid locations.
+The corresponding JUnit test case verifies the correctness of the get_valid_moves method of the PacMan class. It creates a new instance of the NoFrame class, adds a PacMan object to the frame at Location (1,1), creates an ArrayList of Location objects representing the valid moves PacMan can make from its initial position, and compares it to the ArrayList returned by the get_valid_moves method of the PacMan object.
 # Pacman - move()
 ## Written by Ashwath Rajesh.
 This move function will store a list of valid locations it can move to by calling its getValidLocs() function.
@@ -54,8 +49,8 @@ Function is given.
 
 
 # Ghost - get_valid_moves
-
-
+This method returns an ArrayList of Location objects representing the valid moves a Ghost object can make on the current game map. The method first retrieves the current x and y coordinates of the Ghost object, creates a new ArrayList of Location objects named validLocations, and checks each adjacent location for the presence of a wall or another ghost. If a wall or another ghost is present in any adjacent location, the corresponding Location object is added to the validLocations ArrayList. Finally, the method returns the validLocations ArrayList.
+The corresponding JUnit test case tests the get_valid_moves method of a Ghost object. The test creates a new instance of the NoFrame class, adds a new Ghost object to the game with a starting location of (1,1), and checks whether the get_valid_moves method of the Ghost object returns an ArrayList of Location objects containing the expected valid move locations. The test also checks whether the size and contents of the returned ArrayList match the expected values.
 
 # Ghost - move()
 ## Written by Ashwath Rajesh.
@@ -80,7 +75,8 @@ Given
 # MAP CLASS
 
 # Map - move
-
+This method is used to move a component on the game map to a new location. It takes in three parameters: the name of the component to be moved, the new location for the component, and the type of the component being moved. It returns a boolean value indicating whether the move was successful or not.
+The corresponding JUnit test creates a new NoFrame object and checks that the move() method returns false when trying to move a non-existent PacMan object to a new Location. It then adds a new PacMan object to the NoFrame object at a Location of (1, 1) and checks that the move() method returns true when trying to move the PacMan object to a new Location of (1, 2) with a Type of PACMAN. It also checks that the old Location no longer contains the PACMAN type and the new Location now contains the PACMAN type. The test then checks the same for a Ghost object, first checking that the move() method returns false when trying to move a non-existent Ghost object to a new Location. It then adds a new Ghost object to the NoFrame object at a Location of (2, 3) and checks that the move() method returns true when trying to move the Ghost object to a new Location of (1, 2) with a Type of GHOST. It also checks that the old Location no longer contains the GHOST type and the new Location now contains the GHOST type.
 
 # Map- getLoc()
 ## Written by Ashwath Rajesh
