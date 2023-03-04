@@ -66,10 +66,10 @@ public class Map {
       return false;
     }
 
-    locations.put(name, loc);
-    components.get(name).setLocation(loc.x, loc.y);
     field.get(locations.get(name)).remove(type); // removes type in original loc
     field.get(loc).add(type); // add type in new loc
+    locations.put(name, loc);
+    components.get(name).setLocation(loc.x, loc.y);
 
     return true;
 
