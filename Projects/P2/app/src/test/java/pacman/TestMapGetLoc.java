@@ -7,17 +7,13 @@ import java.awt.Color;
 public class TestMapGetLoc extends TestCase {
 
   public void testMapGetLoc() throws FileNotFoundException {
-    MainFrame frame = new MainFrame(); // Creates A New Map With Walls and Tokens Initialized
-    int x = 5;
-    int y = 5;
-    Ghost ghost = frame.addGhost(new Location(x, y), "name", Color.red); // Creates a red ghost named "name" at location
-                                                                         // x,y
-    Map.Type result = null;
-    for (Map.Type t : frame.getMap().getLoc(new Location(x, y))) {
-      if (t == Map.Type.GHOST) {
-        result = t;
-      }
-    }
-    assertEquals(Map.Type.GHOST, result);
+    // Creates A New Map With Walls and Tokens Initialized
+    NoFrame frame = new NoFrame();	  
+    Ghost ghost = frame.addGhost(new Location(1, 1), "Blinky", Color.red);
+    PacMan pacman = frame.addPacMan(new Location(3, 3));
+    assert(frame.getMap().getLoc(new Location(1, 1)).contains(Map.Type.GHOST));
+    assert(frame.getMap().getLoc(new Location(3, 3)).contains(Map.Type.PACMAN));
+    assert(frame.getMap().getLoc(new Location(60, 60)).contains(Map.Type.EMPTY));
+
   }
 }
