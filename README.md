@@ -15,7 +15,7 @@ Once this part has been completed, you should be able to see a JFrame appear tha
 ```bash
 gradle build
 gradle run
-
+```
 
 # PACMAN CLASS
 # Pacman - get_valid_moves()
