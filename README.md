@@ -1,5 +1,5 @@
 # cmsc389T-spring23
-                         PROJECT: PACMAN
+## PROJECT: PACMAN
 TEAM MEMBERS:
 Ashwath Rajesh
 Gayathri Krishnan
