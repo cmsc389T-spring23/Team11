@@ -5,7 +5,10 @@ Ashwath Rajesh
 Gayathri Krishnan
 Venkat Kuppoor
 
-# INSERT IMAGE OF PLAYING PACMAN
+![Image 3-3-23 at 9 47 PM](https://user-images.githubusercontent.com/123569290/222872230-5bed7200-d236-4dc7-934d-5af84014b279.jpg)
+
+
+
 
 
 
