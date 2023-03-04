@@ -1,7 +1,9 @@
 package pacman;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import javax.swing.JComponent;
+// import pacman.utils.Location;
 
 public class PacMan {
   String myName;
@@ -16,18 +18,58 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    return null;
+    int x = myLoc.x;
+    int y = myLoc.y;
+    ArrayList<Location> validLocations = new ArrayList<Location>();
+
+    if (myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.WALL)) {
+      validLocations.add(new Location(x - 1, y));
+    }
+    if (myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.WALL)) {
+      validLocations.add(new Location(x + 1, y));
+    }
+    if (myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.WALL)) {
+      validLocations.add(new Location(x, y - 1));
+    }
+    if (myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.WALL)) {
+      validLocations.add(new Location(x, y + 1));
+    }
+
+    return validLocations;
   }
 
   public boolean move() {
-    return false;
+    ArrayList<Location> locs = this.get_valid_moves();
+    if (locs.size() <= 0) {
+      return (false);
+    }
+    boolean result = myMap.move("pacman", locs.get(0), Map.Type.PACMAN);
+    if (result) {
+      this.myLoc = locs.get(0);
+      return (true);
+    } else {
+      return (false);
+    }
   }
 
   public boolean is_ghost_in_range() {
-    return false;
+    int xloc = myLoc.x;
+    int yloc = myLoc.y;
+    if (myMap.getLoc(new Location(xloc - 1, yloc)).contains(Map.Type.GHOST) ||
+        myMap.getLoc(new Location(xloc + 1, yloc)).contains(Map.Type.GHOST) ||
+        myMap.getLoc(new Location(xloc, yloc - 1)).contains(Map.Type.GHOST) ||
+        myMap.getLoc(new Location(xloc, yloc + 1)).contains(Map.Type.GHOST)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public JComponent consume() {
+    if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE))
+      return myMap.eatCookie(myName);
+
     return null;
+
   }
 }
