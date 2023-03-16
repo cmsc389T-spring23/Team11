@@ -49,7 +49,7 @@ public class Ghost {
     //   return(false);
     // }
   }
-
+  //modified
   public boolean is_pacman_in_range() {
     ArrayList<Location> locAttack = new ArrayList<>();
     locAttack.add(new Location(this.myLoc.x, this.myLoc.y));
