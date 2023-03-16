@@ -59,8 +59,8 @@ public class Ghost {
 
     locAttack.add(new Location(this.myLoc.x, this.myLoc.y + 1));
     locAttack.add(new Location(this.myLoc.x, this.myLoc.y - 1));
-
-    locAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y + 1));
+    //changes line 63 from + 1 to -1
+    locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y + 1));
     locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y - 1));
     
 
