@@ -9,7 +9,6 @@ Venkat Kuppoor
 
 
 
-
 Once this part has been completed, you should be able to see a JFrame appear that allows you to play Automonous PacMan by compiling and running your files. If you don't have Gradle installed, follow the instructions [here](https://gradle.org/install/). We will be using Gradle to build and run the project:
 
 ```bash
