@@ -28,7 +28,7 @@ jobs:
         # Runs a single command using the runners shell
         - name: Test Map Move
           run: |
-            cd Projects/P2/
+            cd Projects/P2/app/bin/src/test
             javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
             java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestMapMove
   testpacmanvalidmoves:
@@ -41,7 +41,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Test PacMan Get Valid Moves
         run: |
-          cd Projects/P2/
+          cd Projects/P2/app/bin/src/test
           javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
           java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestPacManValidMoves
   testghostvalidmoves:
@@ -54,6 +54,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Test Ghost Valid Moves
         run: |
-          cd Projects/P2/
+          cd Projects/P2/app/bin/src/test
           javac -cp "tests/junit-4.10.jar:tests/*:src/*" src/*.java tests/*.java
           java -cp "tests/junit-4.10.jar:src/:tests/" -Djava.awt.headless=true org.junit.runner.JUnitCore TestGhostValidMoves
