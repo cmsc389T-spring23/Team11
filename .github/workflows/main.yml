@@ -30,7 +30,7 @@ jobs:
           run: |
             cd ./Projects/P2/
             ./gradlew build testClasses -x test
-            ./gradlew test --tests -Djava.awt.headless=true TestGhostValidMoves
+            ./gradlew test --tests TestGhostValidMoves
   testpacmanvalidmoves:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
         run: |
           cd ./Projects/P2/
           ./gradlew build testClasses -x test
-          ./gradlew test --tests -Djava.awt.headless=true TestPacManValidMoves
+          ./gradlew test --tests TestPacManValidMoves
   testghostvalidmoves:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -56,4 +56,4 @@ jobs:
         run: |
           cd ./Projects/P2/
           ./gradlew build testClasses -x test
-          ./gradlew test --tests -Djava.awt.headless=true TestGhostValidMoves
+          ./gradlew test --tests TestGhostValidMoves
