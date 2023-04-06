@@ -71,7 +71,7 @@ public class Map {
     locations.put(name, loc);
     components.get(name).setLocation(loc.x, loc.y);
 
-    return true;
+    return false;
 
   }
 
@@ -80,15 +80,15 @@ public class Map {
       return emptySet;
     }
     return field.get(loc);
-    
+
   }
 
   public boolean attack(String Name) {
     // if (!locations.containsKey(Name)) {
-    //   return false;
+    // return false;
     // }
     // if (!locations.containsKey("pacman")) {
-    //   gameOver = true;
+    // gameOver = true;
     // }
     // return gameOver;
     gameOver = true;

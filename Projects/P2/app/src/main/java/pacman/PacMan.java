@@ -22,16 +22,16 @@ public class PacMan {
     int y = myLoc.y;
     ArrayList<Location> validLocations = new ArrayList<Location>();
 
-    if (!myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.WALL)) {
+    if (myMap.getLoc(new Location(x - 1, y)).contains(Map.Type.WALL)) {
       validLocations.add(new Location(x - 1, y));
     }
-    if (!myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.WALL)) {
+    if (myMap.getLoc(new Location(x + 1, y)).contains(Map.Type.WALL)) {
       validLocations.add(new Location(x + 1, y));
     }
     if (!myMap.getLoc(new Location(x, y - 1)).contains(Map.Type.WALL)) {
       validLocations.add(new Location(x, y - 1));
     }
-    if (!myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.WALL)) {
+    if (myMap.getLoc(new Location(x, y + 1)).contains(Map.Type.WALL)) {
       validLocations.add(new Location(x, y + 1));
     }
 
@@ -64,13 +64,12 @@ public class PacMan {
 
     locAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y + 1));
     locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y - 1));
-    
 
     locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y + 1));
     locAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y - 1));
 
-    for(Location loc : locAttack){
-      if(this.myMap.getLoc(loc) != null && this.myMap.getLoc(loc).contains(Map.Type.GHOST)){
+    for (Location loc : locAttack) {
+      if (this.myMap.getLoc(loc) != null && this.myMap.getLoc(loc).contains(Map.Type.GHOST)) {
         return true;
       }
     }
