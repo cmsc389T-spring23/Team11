@@ -130,61 +130,60 @@ jobs:
             ./gradlew test --tests TestMapEatCookie
 
 
-    # testgetloc:
-    # # The type of runner that the job will run on
-    # runs-on: ubuntu-latest
-    # container: openjdk:13
-    # steps:
-    #   # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    #   - uses: actions/checkout@v2
-    #   # Runs a single command using the runners shell
-    #   - name: Test map get loc
-    #     run: |
-    #       cd ./Projects/P2/
-    #       ./gradlew build testClasses -x test
-    #       ./gradlew test --tests TestMapGetLoc
+  testgetloc:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a single command using the runners shell
+        - name: Test map get loc
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestMapGetLoc
 
-    # testpacmangeconsume:
-    #     # The type of runner that the job will run on
-    #     runs-on: ubuntu-latest
-    #     container: openjdk:13
-    #     steps:
-    #       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    #       - uses: actions/checkout@v2
-    #       # Runs a single command using the runners shell
-    #       - name: Test PacMan Consume
-    #         run: |
-    #           cd ./Projects/P2/
-    #           ./gradlew build testClasses -x test
-    #           ./gradlew test --tests TestConsume
-    # testispacmaninrange:
-    #     # The type of runner that the job will run on
-    #     runs-on: ubuntu-latest
-    #     container: openjdk:13
-    #     steps:
-    #       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    #       - uses: actions/checkout@v2
-    #       # Runs a single command using the runners shell
-    #       - name: Test Is Pacman in Range
-    #         run: |
-    #           cd ./Projects/P2/
-    #           ./gradlew build testClasses -x test
-    #           ./gradlew test --tests TestPacManInRange
+  testpacmangeconsume:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+        container: openjdk:13
+        steps:
+          # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+          - uses: actions/checkout@v2
+          # Runs a single command using the runners shell
+          - name: Test PacMan Consume
+            run: |
+              cd ./Projects/P2/
+              ./gradlew build testClasses -x test
+              ./gradlew test --tests TestConsume
+  testispacmaninrange:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+        container: openjdk:13
+        steps:
+          # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+          - uses: actions/checkout@v2
+          # Runs a single command using the runners shell
+          - name: Test Is Pacman in Range
+            run: |
+              cd ./Projects/P2/
+              ./gradlew build testClasses -x test
+              ./gradlew test --tests TestPacManInRange
 
-    # testpacmanmove:
-    #   # The type of runner that the job will run on
-    #   runs-on: ubuntu-latest
-    #   container: openjdk:13
-    #   steps:
-    #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    #     - uses: actions/checkout@v2
-    #     # Runs a single command using the runners shell
-    #     - name: Test PacMan Move
-    #       run: |
-    #         cd ./Projects/P2/
-    #         ./gradlew build testClasses -x test
-    #         ./gradlew test --tests TestPacManMove
+  testpacmanmove:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk:13
+      steps:
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+        - uses: actions/checkout@v2
+        # Runs a single command using the runners shell
+        - name: Test PacMan Move
+          run: |
+            cd ./Projects/P2/
+            ./gradlew build testClasses -x test
+            ./gradlew test --tests TestPacManMove
 
 
 
-  
