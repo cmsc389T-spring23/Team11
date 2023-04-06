@@ -53,27 +53,15 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
-    ArrayList<Location> locAttack = new ArrayList<>();
-    locAttack.add(new Location(this.myLoc.x, this.myLoc.y));
+    for (int dx = -1; dx <= 1; dx++) {
+      for (int dy = -1; dy <= 1; dy++) {
+        Location newLocation = myLoc.shift(dx, dy);
 
-    locAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y));
-    locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y));
-
-    locAttack.add(new Location(this.myLoc.x, this.myLoc.y + 1));
-    locAttack.add(new Location(this.myLoc.x, this.myLoc.y - 1));
-
-    locAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y + 1));
-    locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y - 1));
-    
-
-    locAttack.add(new Location(this.myLoc.x - 1, this.myLoc.y + 1));
-    locAttack.add(new Location(this.myLoc.x + 1, this.myLoc.y - 1));
-
-    for(Location loc : locAttack){
-      if(this.myMap.getLoc(loc) != null && this.myMap.getLoc(loc).contains(Map.Type.GHOST)){
-        return true;
+        if (myMap.getLoc(newLocation).contains(Map.Type.GHOST))
+          return true;
       }
     }
+
     return false;
   }
 
