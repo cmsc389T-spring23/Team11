@@ -82,7 +82,7 @@ public class Map {
     return field.get(loc);
     
   }
-
+  
   public boolean attack(String Name) {
     // if (!locations.containsKey(Name)) {
     //   return false;
@@ -92,7 +92,8 @@ public class Map {
     // }
     // return gameOver;
     gameOver = true;
-    return true;
+    // sabotage-return true
+    return false;
   }
 
   public JComponent eatCookie(String name) {
